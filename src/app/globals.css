@@ -18,8 +18,8 @@ html {
 
 body {
   min-height: 100dvh;
-  background: #0b121a;
-  color: #f4f1ea;
+  background: #0c1019;
+  color: #f3eedc;
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;

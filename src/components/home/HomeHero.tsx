@@ -7,44 +7,49 @@ const PRODUCTS = [
     name: "PULSE",
     accent: "bg-pulse-500",
     description: "Desenvolvimento, orquestração e monitoramento de automações.",
+    stats: [
+      { value: "191", label: "MONO STATITCS" },
+      { value: "765", label: "MEDIA STATICS" },
+    ],
   },
   {
     id: "crm",
     name: "CRM",
     accent: "bg-crm-500",
     description: "Funil, mídias sociais, agentes e BI em um só lugar.",
+    stats: [
+      { value: "2.9K", label: "TABULA FIGURES" },
+      { value: "3.6M", label: "CONT REPORTS" },
+    ],
   },
   {
     id: "contentos",
     name: "CONTENTOS",
     accent: "bg-contentos-500",
     description: "Produção e distribuição de conteúdo assistida por IA.",
+    stats: [
+      { value: "37%", label: "REOUNDED MAIDS" },
+      { value: "138", label: "HIGH-LAVEL OF REFIOES" },
+    ],
   },
-] as const;
-
-/** Labels exatamente como no mock sitenovo.png. */
-const STATS = [
-  { value: "191", label: "MONO STATISTICS" },
-  { value: "765", label: "MEDIA STATISTICS" },
-  { value: "2.9K", label: "TABULA FIGURES" },
-  { value: "3.6M", label: "CONT REPORTS" },
-  { value: "37%", label: "REGUNDED MAIDS" },
-  { value: "138", label: "HIGH-LEVEL OF REFIOES" },
 ] as const;
 
 export function HomeHero() {
   return (
-    <section className="relative isolate min-h-[calc(100dvh-64px)] overflow-hidden">
-      <SignalWeave className="top-[8%] hidden h-[70%] md:flex" />
+    <section className="relative isolate overflow-hidden">
+      <SignalWeave />
 
-      <div className="relative z-10 mx-auto flex h-[calc(100dvh-64px)] max-w-site flex-col px-6 pb-8 pt-12 md:px-10 lg:px-12 lg:pt-14">
-        <div className="max-w-[620px]">
-          <h1 className="font-sans text-[clamp(2.25rem,4.4vw,3.35rem)] font-semibold leading-[1.06] tracking-[-0.03em] text-cream">
+      <div
+        className="relative z-10 mx-auto flex w-full max-w-site flex-col px-[82px] max-[1375px]:px-10 max-md:px-6"
+        style={{ minHeight: "calc(100dvh - 57px)" }}
+      >
+        <div className="pt-[58px] max-md:pt-10">
+          <h1 className="max-w-[700px] font-sans text-[56px] font-semibold leading-[1.02] tracking-[-0.038em] text-cream max-lg:text-[44px] max-md:text-[34px]">
             Software que mostra
             <br />
             o que está acontecendo.
           </h1>
-          <p className="mt-5 max-w-[400px] text-[15px] leading-[1.55] text-slate-400">
+          <p className="mt-5 max-w-[390px] text-[15px] leading-[1.55] text-[#8B93A0]">
             Estúdio de produtos de automação e dados.
             <br />
             Construímos a suíte Orkesta.
@@ -53,53 +58,59 @@ export function HomeHero() {
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <Link
               href="/produtos/orkesta"
-              className="inline-flex h-10 items-center justify-center rounded-lg bg-pulse-500 px-5 text-[14px] font-medium text-white transition-colors duration-base ease-standard hover:bg-pulse-600"
+              className="inline-flex h-[38px] items-center justify-center rounded-md bg-pulse-500 px-5 text-[13px] font-medium text-white transition-colors duration-base ease-standard hover:bg-pulse-600"
             >
               Conhecer o Pulse
             </Link>
             <Link
               href="/#produtos"
-              className="inline-flex h-10 items-center justify-center rounded-lg border border-white/20 px-5 text-[14px] font-medium text-cream transition-colors duration-base ease-standard hover:border-white/40 hover:bg-white/[0.04]"
+              className="inline-flex h-[38px] items-center justify-center rounded-md border border-white/30 px-5 text-[13px] font-medium text-cream transition-colors duration-base ease-standard hover:border-white/45 hover:bg-white/[0.03]"
             >
               Ver a suíte
             </Link>
           </div>
         </div>
 
-        <div
-          id="produtos"
-          className="mt-auto grid grid-cols-1 gap-3 pt-10 md:grid-cols-3 md:gap-3"
-        >
-          {PRODUCTS.map((product) => (
-            <article
-              key={product.id}
-              className="rounded-lg border border-white/[0.09] bg-[#0e141c] px-5 py-5"
-            >
-              <div className={`mb-3.5 h-[3px] w-9 rounded-[1px] ${product.accent}`} />
-              <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-slate-400">
-                {product.name}
-              </h2>
-              <p className="mt-2.5 text-[14px] leading-[1.5] text-slate-200">
-                {product.description}
-              </p>
-            </article>
-          ))}
-        </div>
+        <div className="mt-[88px] flex flex-1 flex-col justify-end pb-6 max-md:mt-12">
+          <div
+            id="produtos"
+            className="grid grid-cols-1 gap-2.5 md:grid-cols-3"
+          >
+            {PRODUCTS.map((product) => (
+              <article
+                key={product.id}
+                className="rounded-[10px] border border-white/[0.11] bg-transparent px-5 pb-[18px] pt-4"
+              >
+                <div className={`mb-3 h-[3px] w-9 ${product.accent}`} />
+                <h2 className="font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-[#8B93A0]">
+                  {product.name}
+                </h2>
+                <p className="mt-2 text-[14px] leading-[1.45] text-cream/90">
+                  {product.description}
+                </p>
+              </article>
+            ))}
+          </div>
 
-        <div
-          id="estudio"
-          className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 md:grid-cols-6 md:gap-x-3"
-        >
-          {STATS.map((stat) => (
-            <div key={stat.label}>
-              <div className="font-mono text-[26px] font-medium tabular-nums tracking-[-0.02em] text-cream md:text-[28px]">
-                {stat.value}
+          <div
+            id="estudio"
+            className="mt-8 grid grid-cols-1 gap-2.5 md:grid-cols-3"
+          >
+            {PRODUCTS.map((product) => (
+              <div key={product.id} className="grid grid-cols-2 gap-x-4">
+                {product.stats.map((stat) => (
+                  <div key={stat.label}>
+                    <div className="font-sans text-[28px] font-semibold tabular-nums tracking-[-0.03em] text-cream">
+                      {stat.value}
+                    </div>
+                    <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-[#5C6573]">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.1em] text-slate-500">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

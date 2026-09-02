@@ -10,9 +10,9 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: "#FFFFFF",
-      // novo.md §4 — Ink + slate + brand accents
-      ink: "#0B121A",
-      cream: "#F4F1EA",
+      // Sampled from orkesta/sitenovo.png
+      ink: "#0C1019",
+      cream: "#F3EEDC",
       slate: {
         100: "#E8EBEF",
         200: "#D6DBE2",
@@ -26,19 +26,19 @@ module.exports = {
         950: "#0D1116",
       },
       pulse: {
-        400: "#2FBAC4",
-        500: "#0E9DA8",
-        600: "#0B7F89",
+        400: "#3EB8C4",
+        500: "#2E9FB0",
+        600: "#258A99",
       },
       crm: {
         400: "#6C79E0",
-        500: "#4B5BD4",
-        600: "#3B49AE",
+        500: "#3E56C6",
+        600: "#3246AE",
       },
       contentos: {
         400: "#BE68A6",
-        500: "#A94A93",
-        600: "#8B3A79",
+        500: "#984383",
+        600: "#7A3569",
       },
     },
     fontFamily: {
