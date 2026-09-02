@@ -1,105 +1,87 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { SiteHeader } from "@/components/home/SiteHeader";
 import { cn } from "@/lib/utils";
 
-// Structured Data (JSON-LD) for Organization
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Rafique AI",
-  "url": "https://rafiqueai.com.br",
-  "logo": "https://rafiqueai.com.br/logos/rafiqueai.png",
-  "description": "Desenvolvemos produtos digitais, automações e soluções inteligentes para simplificar processos e transformar ideias em operações reais.",
-  "founders": [
-    { "@type": "Person", "name": "Rafael" },
-    { "@type": "Person", "name": "Henrique" }
+  name: "Rafique AI",
+  url: "https://rafiqueai.com.br",
+  logo: "https://rafiqueai.com.br/logos/rafiqueai.png",
+  description:
+    "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",
+  founders: [
+    { "@type": "Person", name: "Rafael" },
+    { "@type": "Person", name: "Henrique" },
   ],
-  "sameAs": [
-    "https://www.linkedin.com/company/rafique-ai",
-    "https://github.com/rafiqueai"
-  ]
 };
 
-const inter = Inter({
+const sans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: 'swap',
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const manrope = Manrope({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-manrope",
-  weight: ["400", "500", "600", "700", "800"],
-  display: 'swap',
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Rafique AI - Tecnologia que Transforma a Realidade",
-  description: "Desenvolvemos produtos digitais, automações e soluções inteligentes para simplificar processos e transformar ideias em operações reais.",
-  metadataBase: new URL('https://rafiqueai.com.br'),
+  title: "Rafique AI — Software que mostra o que está acontecendo",
+  description:
+    "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta: Pulse, CRM e ContentOS.",
+  metadataBase: new URL("https://rafiqueai.com.br"),
   openGraph: {
-    type: 'website',
-    locale: 'pt_BR',
-    url: 'https://rafiqueai.com.br',
-    title: 'Rafique AI - Tecnologia que Transforma a Realidade',
-    description: 'Desenvolvemos produtos digitais, automações e soluções inteligentes para simplificar processos e transformar ideias em operações reais.',
-    siteName: 'Rafique AI',
-    images: [{
-      url: 'https://rafiqueai.com.br/og-image.jpg',
-      width: 1200,
-      height: 630,
-    }],
+    type: "website",
+    locale: "pt_BR",
+    url: "https://rafiqueai.com.br",
+    title: "Rafique AI — Software que mostra o que está acontecendo",
+    description:
+      "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",
+    siteName: "Rafique AI",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Rafique AI - Tecnologia que Transforma a Realidade',
-    description: 'Desenvolvemos produtos digitais, automações e soluções inteligentes para simplificar processos e transformar ideias em operações reais.',
-    images: ['https://rafiqueai.com.br/og-image.jpg'],
+    card: "summary_large_image",
+    title: "Rafique AI — Software que mostra o que está acontecendo",
+    description:
+      "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",
   },
 };
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  themeColor: '#2B375D',
+  themeColor: "#0B121A",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData)
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={cn(
-        "min-h-screen bg-rafique-dark font-inter antialiased",
-        inter.variable,
-        manrope.variable
-      )}>
-        {/* Skip to main content link for keyboard navigation */}
-        <a
-          href="#main-content"
-          className="skip-to-content"
-          aria-label="Pular para o conteúdo principal"
-        >
+      <body className={cn("min-h-dvh bg-ink antialiased", sans.variable, mono.variable)}>
+        <a href="#main-content" className="skip-to-content">
           Pular para o conteúdo principal
         </a>
-        
-        <div className="relative z-10 flex min-h-screen flex-col">
-          <Navbar />
-          <main id="main-content" className="flex-1 pt-20" role="main">
+        <div className="relative flex min-h-dvh flex-col">
+          <SiteHeader />
+          <main id="main-content" className="flex-1">
             {children}
           </main>
-          <Footer />
         </div>
       </body>
     </html>
