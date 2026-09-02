@@ -1,6 +1,5 @@
 /**
  * Alturas das barras medidas no mock (gaps filtrados).
- * densify → ~80 barras, 2px + gap 5px ≈ trama do sitenovo.
  */
 const MEASURED = [
   12, 14, 10, 10, 10, 10, 10, 17, 42, 14, 34, 23, 10, 17, 22, 12, 35, 10, 16,
@@ -28,17 +27,18 @@ export function SignalWeave({ className = "" }: { className?: string }) {
       aria-hidden
       className={`pointer-events-none absolute inset-y-0 right-0 hidden overflow-hidden md:block ${className}`}
       style={{
-        width: "68%",
-        opacity: 0.14,
+        width: "78%",
+        opacity: 0.145,
         maskImage:
-          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.45) 14%, #000 32%)",
+          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.4) 12%, #000 28%)",
         WebkitMaskImage:
-          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.45) 14%, #000 32%)",
+          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.4) 12%, #000 28%)",
       }}
     >
+      {/* Faixa vertical alinhada ao hero do mock (entre header e cards). */}
       <div
-        className="absolute inset-x-0 bottom-[24%] top-[9%] flex items-end justify-end"
-        style={{ gap: "5px" }}
+        className="absolute inset-x-0 flex items-end justify-end"
+        style={{ top: "7%", bottom: "38%", gap: "5px" }}
       >
         {HEIGHTS.map((h, i) => (
           <span
