@@ -37,31 +37,3 @@ a {
 .skip-to-content:focus-visible {
   top: 0;
 }
-
-.rafique-stage {
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
-  background: #0c1019;
-}
-
-.rafique-artboard {
-  width: 1376px;
-  height: 768px;
-  flex-shrink: 0;
-  transform-origin: top center;
-}
-
-@media (max-width: 1375px) {
-  .rafique-stage {
-    height: calc(100vw * 768 / 1376);
-    min-height: 0;
-  }
-
-  .rafique-artboard {
-    transform: scale(calc(100vw / 1376));
-  }
-}
