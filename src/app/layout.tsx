@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/home/SiteHeader";
 import { cn } from "@/lib/utils";
 
 const structuredData = {
@@ -46,12 +45,6 @@ export const metadata: Metadata = {
       "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",
     siteName: "Rafique AI",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Rafique AI — Software que mostra o que está acontecendo",
-    description:
-      "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",
-  },
 };
 
 export const viewport: Viewport = {
@@ -73,16 +66,17 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={cn("min-h-dvh bg-ink antialiased", sans.variable, mono.variable)}>
+      <body
+        className={cn(
+          "min-h-dvh bg-[#0C1019] antialiased",
+          sans.variable,
+          mono.variable,
+        )}
+      >
         <a href="#main-content" className="skip-to-content">
           Pular para o conteúdo principal
         </a>
-        <div className="relative flex min-h-dvh flex-col">
-          <SiteHeader />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-        </div>
+        <main id="main-content">{children}</main>
       </body>
     </html>
   );

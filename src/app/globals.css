@@ -2,21 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --ease: cubic-bezier(0.2, 0, 0, 1);
-  --t-fast: 140ms;
-  --t-base: 200ms;
-}
-
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
+  margin: 0;
   min-height: 100dvh;
   background: #0c1019;
   color: #f3eedc;
@@ -30,26 +22,12 @@ a {
   text-decoration: none;
 }
 
-::selection {
-  background: rgba(14, 157, 168, 0.35);
-  color: #f4f1ea;
-}
-
-*:focus {
-  outline: none;
-}
-
-*:focus-visible {
-  outline: 2px solid #0e9da8;
-  outline-offset: 2px;
-}
-
 .skip-to-content {
   position: absolute;
   top: -100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #0e9da8;
+  background: #37959d;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -60,11 +38,30 @@ a {
   top: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
+.rafique-stage {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  background: #0c1019;
+}
+
+.rafique-artboard {
+  width: 1376px;
+  height: 768px;
+  flex-shrink: 0;
+  transform-origin: top center;
+}
+
+@media (max-width: 1375px) {
+  .rafique-stage {
+    height: calc(100vw * 768 / 1376);
+    min-height: 0;
+  }
+
+  .rafique-artboard {
+    transform: scale(calc(100vw / 1376));
   }
 }

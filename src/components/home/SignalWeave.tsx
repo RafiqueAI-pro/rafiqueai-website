@@ -1,53 +1,66 @@
-/**
- * Alturas das barras medidas no mock (gaps filtrados).
- */
-const MEASURED = [
-  12, 14, 10, 10, 10, 10, 10, 17, 42, 14, 34, 23, 10, 17, 22, 12, 35, 10, 16,
-  73, 51, 63, 16, 31, 40, 29, 22, 13, 38, 28, 14, 10, 28, 16, 18, 24, 27, 47,
-  70, 63, 10, 23, 36, 18, 20, 35, 51,
+/** Barras medidas no sitenovo.png (artboard 1376×768). */
+export const WAVE_BARS: { x: number; y: number; h: number }[] = [
+  { x: 820.5, y: 188, h: 124 },
+  { x: 894, y: 233, h: 94 },
+  { x: 914, y: 253, h: 62 },
+  { x: 929.5, y: 257, h: 54 },
+  { x: 939.5, y: 223, h: 115 },
+  { x: 950, y: 234, h: 92 },
+  { x: 960.5, y: 255, h: 88 },
+  { x: 970.5, y: 208, h: 145 },
+  { x: 981, y: 259, h: 43 },
+  { x: 991.5, y: 248, h: 65 },
+  { x: 1002, y: 130, h: 301 },
+  { x: 1012.5, y: 175, h: 211 },
+  { x: 1022.5, y: 150, h: 258 },
+  { x: 1033.5, y: 248, h: 65 },
+  { x: 1043.5, y: 217, h: 129 },
+  { x: 1054, y: 199, h: 163 },
+  { x: 1064.5, y: 221, h: 119 },
+  { x: 1075, y: 235, h: 91 },
+  { x: 1085.5, y: 253, h: 55 },
+  { x: 1095.5, y: 202, h: 156 },
+  { x: 1106.5, y: 223, h: 117 },
+  { x: 1116.5, y: 251, h: 58 },
+  { x: 1127, y: 261, h: 39 },
+  { x: 1137.5, y: 223, h: 115 },
+  { x: 1148, y: 240, h: 83 },
+  { x: 1158.5, y: 243, h: 83 },
+  { x: 1168.5, y: 231, h: 99 },
+  { x: 1179, y: 252, h: 57 },
+  { x: 1189.5, y: 226, h: 110 },
+  { x: 1199.5, y: 173, h: 218 },
+  { x: 1210.5, y: 184, h: 192 },
+  { x: 1220.5, y: 226, h: 109 },
+  { x: 1231.5, y: 136, h: 288 },
+  { x: 1241.5, y: 221, h: 119 },
+  { x: 1252, y: 154, h: 257 },
+  { x: 1268.5, y: 266, h: 34 },
+  { x: 1279, y: 259, h: 42 },
+  { x: 1289.5, y: 232, h: 100 },
+  { x: 1299.5, y: 207, h: 147 },
+  { x: 1310.5, y: 241, h: 77 },
+  { x: 1320.5, y: 267, h: 26 },
+  { x: 1330.5, y: 240, h: 82 },
+  { x: 1341.5, y: 210, h: 142 },
+  { x: 1351.5, y: 176, h: 209 },
 ];
 
-function densify(src: number[], target: number): number[] {
-  const out: number[] = [];
-  for (let i = 0; i < target; i++) {
-    const t = (i / Math.max(1, target - 1)) * (src.length - 1);
-    const a = Math.floor(t);
-    const b = Math.min(src.length - 1, a + 1);
-    const f = t - a;
-    out.push(Math.round(src[a] * (1 - f) + src[b] * f));
-  }
-  return out;
-}
-
-const HEIGHTS = densify(MEASURED, 84);
-
-export function SignalWeave({ className = "" }: { className?: string }) {
+export function SignalWeave() {
   return (
-    <div
-      aria-hidden
-      className={`pointer-events-none absolute inset-y-0 right-0 hidden overflow-hidden md:block ${className}`}
-      style={{
-        width: "78%",
-        opacity: 0.145,
-        maskImage:
-          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.4) 12%, #000 28%)",
-        WebkitMaskImage:
-          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,.4) 12%, #000 28%)",
-      }}
-    >
-      {/* Faixa vertical alinhada ao hero do mock (entre header e cards). */}
-      <div
-        className="absolute inset-x-0 flex items-end justify-end"
-        style={{ top: "7%", bottom: "38%", gap: "5px" }}
-      >
-        {HEIGHTS.map((h, i) => (
-          <span
-            key={i}
-            className="w-[2px] shrink-0 bg-[#9AA3B0]"
-            style={{ height: `${Math.max(10, Math.min(96, h))}%` }}
-          />
-        ))}
-      </div>
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      {WAVE_BARS.map((bar) => (
+        <span
+          key={bar.x}
+          className="absolute w-[2px] bg-[#9AA3B0]"
+          style={{
+            left: bar.x - 1,
+            top: bar.y,
+            height: bar.h,
+            opacity: 0.14,
+          }}
+        />
+      ))}
     </div>
   );
 }
