@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/site/PageHeader";
+import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Eyebrow } from "@/components/site/ui";
@@ -27,9 +27,8 @@ const AFTER_STEPS = [
 export default function ContatoPage() {
   return (
     <>
-      <PageHeader current="contato" />
-      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
-        <section className="pt-[88px]">
+      <HeroBackdrop current="contato">
+        <div className="mx-auto max-w-site px-6 pt-[88px] md:px-10 lg:px-14">
           <Eyebrow>Contato</Eyebrow>
           <h1 className="max-w-[15ch] text-balance text-[clamp(34px,4.6vw,52px)] font-semibold leading-[1.08] tracking-[-0.025em] text-cream">
             Conte o que você precisa resolver.
@@ -38,8 +37,9 @@ export default function ContatoPage() {
             Respondemos em até 1 dia útil. Sem formulário de qualificação,
             sem robô de chat.
           </p>
-        </section>
-
+        </div>
+      </HeroBackdrop>
+      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
         <section className="grid gap-16 py-14 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
 

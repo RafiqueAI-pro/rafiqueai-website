@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/site/PageHeader";
+import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { ButtonOutline, Eyebrow, MonoLabel } from "@/components/site/ui";
 
@@ -33,9 +33,8 @@ const LEGACY_PRODUCTS = [
 export default function LegadoPage() {
   return (
     <>
-      <PageHeader current="produtos" />
-      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
-        <section className="pb-6 pt-[88px]">
+      <HeroBackdrop current="produtos">
+        <div className="mx-auto max-w-site px-6 pb-6 pt-[88px] md:px-10 lg:px-14">
           <Eyebrow>Produtos anteriores</Eyebrow>
           <h1 className="max-w-[18ch] text-balance text-[clamp(30px,4vw,44px)] font-semibold leading-[1.1] tracking-[-0.025em] text-cream">
             Produtos que construímos antes da Orkesta.
@@ -45,8 +44,9 @@ export default function LegadoPage() {
             contrato vigente. Não fazem parte da suíte Orkesta e não recebem
             novo desenvolvimento de marca.
           </p>
-        </section>
-
+        </div>
+      </HeroBackdrop>
+      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
         <section className="py-8">
           {LEGACY_PRODUCTS.map((p) => (
             <div

@@ -8,9 +8,8 @@ const NAV = [
   { href: "/contato", label: "Contato", key: "contato" },
 ] as const;
 
-type NavKey = (typeof NAV)[number]["key"];
+export type NavKey = (typeof NAV)[number]["key"];
 
-/** Header institucional para páginas em fluxo normal (não o artboard 1:1 da home). */
 export function PageHeader({ current }: { current?: NavKey }) {
   return (
     <header className="border-b border-white/[0.06]">
