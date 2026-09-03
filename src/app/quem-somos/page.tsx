@@ -1,37 +1,141 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PageHeader } from "@/components/site/PageHeader";
+import { PageFooter } from "@/components/site/PageFooter";
+import { Eyebrow } from "@/components/site/ui";
 
 export const metadata: Metadata = {
-  title: "Sobre — Rafique AI",
-  description: "Estúdio de produtos de automação e dados. Rafael e Henrique.",
+  title: "Quem somos — Rafique AI",
+  description:
+    "Rafael Meireles e Henrique Silva. Estúdio de engenharia aplicada por trás da suíte Orkesta.",
 };
+
+const FOUNDERS = [
+  {
+    initial: "R",
+    name: "Rafael Meireles",
+    role: "DevOps & Scrum Master",
+    bio: "Mantém a esteira de deploy, infraestrutura e cadência de time. Garante que o que sai do ensaio chega em produção sem sobressalto.",
+    stack: "DevOps · CI/CD · Scrum",
+  },
+  {
+    initial: "H",
+    name: "Henrique Silva",
+    role: "Arquitetura & Backend",
+    bio: "Desenha a arquitetura e constrói a base: API, banco de dados, orquestração. Mantém o que roda em produção rodando.",
+    stack: "Arquitetura · Backend · Dados",
+  },
+];
+
+const STEPS = [
+  {
+    n: "01",
+    title: "Diagnóstico",
+    desc: "Mapeamos o fluxo real: onde o dado trava, quem reprocessa na mão.",
+  },
+  {
+    n: "02",
+    title: "Partitura",
+    desc: "Desenhamos o fluxo como template — o que roda, em que ordem, com qual sinal de falha.",
+  },
+  {
+    n: "03",
+    title: "Ensaio",
+    desc: "Rodamos em sandbox contra dado real antes de qualquer produção.",
+  },
+  {
+    n: "04",
+    title: "Regência",
+    desc: "Publicamos com observabilidade — você vê a execução acontecer, não só o resultado.",
+  },
+];
+
+const STATS = [
+  { value: "9", label: "anos de operação" },
+  { value: "1.284", label: "execuções/mês em produção" },
+  { value: "3", label: "produtos na suíte Orkesta" },
+];
 
 export default function QuemSomosPage() {
   return (
-    <div className="min-h-dvh bg-[#0C1019] text-[#F3EEDC]">
-      <header className="border-b border-white/[0.06] px-[82px] py-4 max-md:px-6">
-        <Link href="/" className="text-[14px] font-semibold tracking-[0.06em]">
-          RAFIQUE AI
-        </Link>
-      </header>
-      <section className="px-[82px] py-20 max-md:px-6">
-        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#5C6573]">
-          Sobre
-        </p>
-        <h1 className="mt-4 max-w-xl text-[clamp(2rem,4vw,2.75rem)] font-semibold tracking-[-0.025em]">
-          Estúdio de produtos de automação e dados.
-        </h1>
-        <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-[#8B93A0]">
-          Rafique AI é a casa. Construímos a suíte Orkesta — Pulse, CRM e
-          ContentOS — para operação sob controle.
-        </p>
-        <Link
-          href="/contato"
-          className="mt-10 inline-flex h-11 items-center rounded-md bg-[#37959D] px-5 text-[14px] font-medium text-white"
-        >
-          Falar com a gente
-        </Link>
-      </section>
-    </div>
+    <>
+      <PageHeader current="sobre" />
+      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
+        <section className="pt-[88px]">
+          <Eyebrow>Quem somos</Eyebrow>
+          <h1 className="max-w-[15ch] text-balance text-[clamp(34px,4.6vw,52px)] font-semibold leading-[1.08] tracking-[-0.025em] text-cream">
+            Dois fundadores. Um estúdio de engenharia aplicada.
+          </h1>
+          <p className="mt-5 max-w-[52ch] text-[17px] leading-relaxed text-slate-400">
+            Rafael e Henrique constroem software que expõe o que está
+            acontecendo — não painéis bonitos, produto que resolve. A Orkesta
+            nasceu de operação real, não de brainstorm.
+          </p>
+        </section>
+
+        <section className="pb-14 pt-14">
+          <div className="grid gap-6 md:grid-cols-2">
+            {FOUNDERS.map((f) => (
+              <div
+                key={f.name}
+                className="rounded-lg border border-slate-800 bg-[#131822] p-8"
+              >
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-md border border-slate-700 font-mono text-xl font-semibold text-cream">
+                  {f.initial}
+                </div>
+                <h3 className="text-lg font-semibold text-cream">{f.name}</h3>
+                <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.06em] text-pulse-400">
+                  {f.role}
+                </div>
+                <p className="mt-3.5 text-[14px] leading-relaxed text-slate-400">
+                  {f.bio}
+                </p>
+                <div className="mt-4 border-t border-white/[0.06] pt-4 font-mono text-[11.5px] text-slate-500">
+                  {f.stack}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="pb-14">
+          <Eyebrow>Como trabalhamos</Eyebrow>
+          <h2 className="max-w-[22ch] text-balance text-[clamp(24px,3vw,32px)] font-semibold leading-tight tracking-[-0.02em] text-cream">
+            Da automação manual ao produto em produção — quatro etapas, sem
+            atalho.
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {STEPS.map((s) => (
+              <div key={s.n}>
+                <div className="font-mono text-[28px] font-semibold text-slate-700">
+                  {s.n}
+                </div>
+                <h3 className="mt-3.5 text-[15px] font-semibold text-cream">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-slate-400">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="pb-20">
+          <div className="flex flex-wrap gap-14">
+            {STATS.map((s) => (
+              <div key={s.label}>
+                <b className="block font-mono text-[36px] font-semibold tracking-[-0.01em] text-cream">
+                  {s.value}
+                </b>
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.06em] text-slate-500">
+                  {s.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+      <PageFooter />
+    </>
   );
 }

@@ -1,20 +1,61 @@
 import type { Metadata } from "next";
+import { LegalPage } from "@/components/site/LegalPage";
 
 export const metadata: Metadata = {
   title: "Termos — Rafique AI",
-  description: "Termos de uso da Rafique AI.",
+  description: "Termos de uso da Rafique AI e da suíte Orkesta.",
 };
+
+const SECTIONS = [
+  {
+    num: "01",
+    id: "objeto",
+    title: "Objeto",
+    body: [
+      "Estes termos regem o uso do site rafiqueai.com.br e o acesso institucional aos produtos da suíte Orkesta. O uso comercial de cada produto segue o contrato firmado com o cliente.",
+    ],
+  },
+  {
+    num: "02",
+    id: "uso",
+    title: "Uso do serviço",
+    body: [
+      "O conteúdo deste site é informativo. Não reproduza, revenda ou automatize a coleta de conteúdo sem autorização por escrito.",
+    ],
+  },
+  {
+    num: "03",
+    id: "contas",
+    title: "Contas e acesso",
+    body: [
+      "Credenciais de acesso aos produtos Orkesta são pessoais e intransferíveis. O compartilhamento de login pode suspender o acesso.",
+    ],
+  },
+  {
+    num: "04",
+    id: "limites",
+    title: "Limites de responsabilidade",
+    body: [
+      "Não respondemos por decisões tomadas com base em dados de terceiros integrados aos produtos Orkesta. A disponibilidade de cada produto segue o SLA definido em contrato.",
+    ],
+  },
+  {
+    num: "05",
+    id: "contato-legal",
+    title: "Contato",
+    body: [
+      "Dúvidas sobre estes termos: contato@rafiqueai.com.br.",
+    ],
+  },
+];
 
 export default function TermosPage() {
   return (
-    <section className="mx-auto max-w-site px-6 py-20 md:px-10 lg:px-12">
-      <h1 className="text-3xl font-semibold tracking-[-0.02em] text-cream">
-        Termos de uso
-      </h1>
-      <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-slate-400">
-        O uso do site e dos produtos Orkesta segue os contratos comerciais
-        aplicáveis a cada cliente. Dúvidas: contato@rafiqueai.com.br.
-      </p>
-    </section>
+    <LegalPage
+      current="termos"
+      title="Termos de uso"
+      updated="03 set 2026"
+      sections={SECTIONS}
+    />
   );
 }
