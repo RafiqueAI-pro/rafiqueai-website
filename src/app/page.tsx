@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { PageHeader } from "@/components/site/PageHeader";
+import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { ButtonPrimary, ButtonOutline } from "@/components/site/ui";
 
@@ -40,34 +39,24 @@ const PRODUCTS = [
 export default function HomePage() {
   return (
     <>
-      <PageHeader />
-      <main>
-        <section className="relative overflow-hidden border-b border-white/[0.06]">
-          <Image
-            src="/brand/wave-exact.svg"
-            alt=""
-            aria-hidden="true"
-            fill
-            unoptimized
-            className="pointer-events-none hidden object-cover object-right md:block"
-          />
-          <div className="relative mx-auto max-w-site px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-20 lg:px-14">
-            <h1 className="max-w-[17ch] text-balance text-[clamp(38px,6.4vw,84px)] font-bold leading-[1.04] tracking-[-0.03em] text-cream">
-              Software que mostra o que está acontecendo.
-            </h1>
-            <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-slate-400 md:text-[18px]">
-              Estúdio de produtos de automação e dados. Construímos a suíte
-              Orkesta.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonPrimary href="/produtos/orkesta">
-                Conhecer o Pulse
-              </ButtonPrimary>
-              <ButtonOutline href="#produtos">Ver a suíte</ButtonOutline>
-            </div>
+      <HeroBackdrop>
+        <div className="mx-auto max-w-site px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-20 lg:px-14">
+          <h1 className="max-w-[17ch] text-balance text-[clamp(38px,6.4vw,84px)] font-bold leading-[1.04] tracking-[-0.03em] text-cream">
+            Software que mostra o que está acontecendo.
+          </h1>
+          <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-slate-400 md:text-[18px]">
+            Estúdio de produtos de automação e dados. Construímos a suíte
+            Orkesta.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ButtonPrimary href="/produtos/orkesta">
+              Conhecer o Pulse
+            </ButtonPrimary>
+            <ButtonOutline href="#produtos">Ver a suíte</ButtonOutline>
           </div>
-        </section>
-
+        </div>
+      </HeroBackdrop>
+      <main>
         <section
           id="produtos"
           className="scroll-mt-24 mx-auto max-w-site px-6 py-16 md:px-10 md:py-20 lg:px-14"

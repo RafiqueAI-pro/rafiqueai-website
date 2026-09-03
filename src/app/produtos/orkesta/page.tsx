@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/site/PageHeader";
+import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { RingMark } from "@/components/site/RingMark";
 import { ButtonPrimary, ButtonOutline, Eyebrow } from "@/components/site/ui";
@@ -13,9 +13,8 @@ export const metadata: Metadata = {
 export default function OrkestaPage() {
   return (
     <>
-      <PageHeader current="produtos" />
-      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
-        <section className="flex flex-col items-start gap-10 pb-10 pt-[88px] lg:flex-row lg:items-center">
+      <HeroBackdrop current="produtos">
+        <div className="mx-auto flex max-w-site flex-col items-start gap-10 px-6 pb-10 pt-[88px] md:px-10 lg:flex-row lg:items-center lg:px-14">
           <div className="flex-1">
             <Eyebrow>Orkesta — suíte</Eyebrow>
             <h1 className="max-w-[13ch] text-balance text-[clamp(34px,4.6vw,52px)] font-semibold leading-[1.08] tracking-[-0.025em] text-cream">
@@ -31,8 +30,9 @@ export default function OrkestaPage() {
             </div>
           </div>
           <RingMark size={180} className="shrink-0" />
-        </section>
-
+        </div>
+      </HeroBackdrop>
+      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
         <section id="pulse" className="scroll-mt-24 py-9">
           <div className="grid items-center gap-10 rounded-xl border border-slate-800 bg-gradient-to-b from-[#0F2427] to-[#131822] p-10 lg:grid-cols-2">
             <div>

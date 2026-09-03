@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader } from "@/components/site/PageHeader";
+import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { Eyebrow } from "@/components/site/ui";
 import { cn } from "@/lib/utils";
@@ -26,9 +26,8 @@ const TOGGLE = [
 export function LegalPage({ current, title, updated, sections }: LegalPageProps) {
   return (
     <>
-      <PageHeader current="produtos" />
-      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
-        <section className="flex flex-wrap items-end justify-between gap-4 pt-[72px]">
+      <HeroBackdrop current="produtos">
+        <div className="mx-auto flex max-w-site flex-wrap items-end justify-between gap-4 px-6 pt-[72px] md:px-10 lg:px-14">
           <div>
             <Eyebrow>Legal</Eyebrow>
             <h1 className="text-[clamp(28px,3.4vw,38px)] font-semibold tracking-[-0.02em] text-cream">
@@ -55,8 +54,9 @@ export function LegalPage({ current, title, updated, sections }: LegalPageProps)
               </Link>
             ))}
           </div>
-        </section>
-
+        </div>
+      </HeroBackdrop>
+      <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
         <div className="grid gap-14 pb-24 pt-12 lg:grid-cols-[220px_1fr]">
           <nav className="flex h-fit flex-col gap-0.5 lg:sticky lg:top-[100px]">
             {sections.map((s) => (
