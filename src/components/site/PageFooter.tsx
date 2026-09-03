@@ -8,6 +8,7 @@ const PRODUCTS = [
 
 const COMPANY = [
   { href: "/quem-somos", label: "Sobre" },
+  { href: "/estudio", label: "Estúdio" },
   { href: "/contato", label: "Contato" },
 ];
 

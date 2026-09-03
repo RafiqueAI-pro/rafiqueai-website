@@ -26,32 +26,9 @@ const FOUNDERS = [
   },
 ];
 
-const STEPS = [
-  {
-    n: "01",
-    title: "Diagnóstico",
-    desc: "Mapeamos o fluxo real: onde o dado trava, quem reprocessa na mão.",
-  },
-  {
-    n: "02",
-    title: "Partitura",
-    desc: "Desenhamos o fluxo como template — o que roda, em que ordem, com qual sinal de falha.",
-  },
-  {
-    n: "03",
-    title: "Ensaio",
-    desc: "Rodamos em sandbox contra dado real antes de qualquer produção.",
-  },
-  {
-    n: "04",
-    title: "Regência",
-    desc: "Publicamos com observabilidade — você vê a execução acontecer, não só o resultado.",
-  },
-];
-
 const STATS = [
-  { value: "9", label: "anos de operação" },
-  { value: "1.284", label: "execuções/mês em produção" },
+  { value: "5+", label: "anos de experiência em automação" },
+  { value: "20k+", label: "execuções/mês (workers e robôs)" },
   { value: "3", label: "produtos na suíte Orkesta" },
 ];
 
@@ -72,7 +49,7 @@ export default function QuemSomosPage() {
         </div>
       </HeroBackdrop>
       <main className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
-        <section className="pb-14 pt-14">
+        <section className="pb-8 pt-14">
           <div className="grid gap-6 md:grid-cols-2">
             {FOUNDERS.map((f) => (
               <div
@@ -95,29 +72,12 @@ export default function QuemSomosPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        <section className="pb-14">
-          <Eyebrow>Como trabalhamos</Eyebrow>
-          <h2 className="max-w-[22ch] text-balance text-[clamp(24px,3vw,32px)] font-semibold leading-tight tracking-[-0.02em] text-cream">
-            Da automação manual ao produto em produção — quatro etapas, sem
-            atalho.
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {STEPS.map((s) => (
-              <div key={s.n}>
-                <div className="font-mono text-[28px] font-semibold text-slate-700">
-                  {s.n}
-                </div>
-                <h3 className="mt-3.5 text-[15px] font-semibold text-cream">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-slate-400">
-                  {s.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <a
+            href="/estudio"
+            className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-pulse-400 hover:text-pulse-400/80"
+          >
+            Como trabalhamos →
+          </a>
         </section>
 
         <section className="pb-20">
