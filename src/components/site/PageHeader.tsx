@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { href: "/produtos/orkesta", label: "Produtos", key: "produtos" },
-  { href: "/#estudio", label: "Estúdio", key: "estudio" },
+  { href: "/estudio", label: "Estúdio", key: "estudio" },
   { href: "/quem-somos", label: "Sobre", key: "sobre" },
   { href: "/contato", label: "Contato", key: "contato" },
 ] as const;
