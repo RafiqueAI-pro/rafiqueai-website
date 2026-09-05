@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { ButtonPrimary, ButtonOutline, Eyebrow } from "@/components/site/ui";
+import { Faq } from "@/components/site/Faq";
 
 export const metadata: Metadata = {
   title: "Rafique AI — Software que mostra o que está acontecendo",
@@ -88,6 +89,29 @@ const PRODUCTS = [
     href: "/produtos/orkesta#contentos",
   },
 ] as const;
+
+const HOME_FAQ = [
+  {
+    question: "Serve pro meu tipo de negócio?",
+    answer:
+      "Trabalhamos com perfis bem diferentes — de uma consultoria fitness (o Cadia, um produto próprio da Orkesta) a e-commerce e serviço local. O diagnóstico inicial existe justamente pra mapear se o seu fluxo tem automação que vale a pena antes de qualquer proposta.",
+  },
+  {
+    question: "E se eu já uso n8n, Make ou Zapier?",
+    answer:
+      "A Orkesta conecta e substitui aos poucos — não exige jogar fora o que já existe. Entendemos o que já está rodando antes de propor qualquer troca.",
+  },
+  {
+    question: "Quanto tempo até funcionar de verdade?",
+    answer:
+      "Usamos o Cadia como referência de prazo real: é um produto nosso, em produção, com 100 usuários ativos e 8 assinantes pagantes — não uma promessa abstrata de automação.",
+  },
+  {
+    question: "RPA ou agente de IA — quem decide isso?",
+    answer:
+      "A gente. Errar essa escolha custa o projeto e a reputação de quem contratou — por isso o diagnóstico inclui recomendar a abordagem certa, não vender a mais cara.",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -286,6 +310,16 @@ export default function HomePage() {
           >
             Ver a suíte completa →
           </Link>
+        </section>
+
+        <section className="border-t border-white/[0.06] py-16 md:py-20">
+          <div className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
+            <Eyebrow>Perguntas frequentes</Eyebrow>
+            <h2 className="mb-8 max-w-[26ch] text-balance text-[clamp(22px,2.8vw,28px)] font-semibold leading-[1.25] tracking-[-0.02em] text-cream">
+              Antes de falar com a gente
+            </h2>
+            <Faq items={HOME_FAQ} />
+          </div>
         </section>
       </main>
       <PageFooter />
