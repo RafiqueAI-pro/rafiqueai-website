@@ -68,7 +68,8 @@ const STEPS = [
 const SCREENSHOTS = [
   { src: "/screenshots/crm/dashboard.jpg", label: "Início", desc: "Pipeline, previsão do mês e ritmo comercial num só painel." },
   { src: "/screenshots/crm/pipeline.jpg", label: "Negócios", desc: "Kanban por estágio, com histórico e próxima ação por card." },
-  { src: "/screenshots/crm/whatsapp.jpg", label: "WhatsApp", desc: "Inbox com não respondidas e a IA sugerindo negócios quentes pendentes." },
+  { src: "/screenshots/crm/whatsapp.jpg", label: "WhatsApp — premium", desc: "Inbox com não respondidas e a IA sugerindo negócios quentes pendentes." },
+  { src: "/screenshots/crm/whatsapp-web.jpg", label: "WhatsApp — estilo WhatsApp Web", desc: "Mesma função, com a cara do app que seu time já usa todo dia." },
   { src: "/screenshots/crm/inteligencia.jpg", label: "Inteligência", desc: "Alertas de risco e conversão por origem, sem precisar cruzar planilha." },
   { src: "/screenshots/crm/relatorios.jpg", label: "Relatórios", desc: "Funil por estágio e motivos de perda, atualizados sozinhos." },
 ];

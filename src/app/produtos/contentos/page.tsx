@@ -174,7 +174,7 @@ export default function ContentosPage() {
         <section id="telas" className="scroll-mt-24 border-t border-white/[0.06] py-14">
           <Eyebrow>Telas reais</Eyebrow>
           <h2 className="max-w-[26ch] text-balance text-[clamp(22px,2.8vw,28px)] font-semibold leading-[1.3] tracking-[-0.015em] text-cream">
-            O produto que já publica o site da Harumi Arquitetura.
+            O produto rodando, não um mockup.
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {SCREENSHOTS.map((s) => (
