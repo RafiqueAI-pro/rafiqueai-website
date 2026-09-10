@@ -70,7 +70,7 @@ const PRODUCTS = [
     mono: "text-pulse-400",
     description:
       "Dashboard total de controle — conecta o que você já automatizou e mostra o que importa.",
-    href: "/produtos/orkesta#pulse",
+    href: "/produtos/pulse",
   },
   {
     key: "crm",

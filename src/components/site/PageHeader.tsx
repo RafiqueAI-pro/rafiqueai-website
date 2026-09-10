@@ -11,7 +11,7 @@ export type NavKey = (typeof NAV)[number]["key"] | "produtos";
 
 const PRODUCT_LINKS = [
   { href: "/produtos/orkesta", label: "Visão geral", dot: "#8C97A6" },
-  { href: "/produtos/orkesta#pulse", label: "Pulse", dot: "#4AADB4" },
+  { href: "/produtos/pulse", label: "Pulse", dot: "#4AADB4" },
   { href: "/produtos/crm", label: "CRM", dot: "#6C79E0" },
   { href: "/produtos/contentos", label: "ContentOS", dot: "#BE68A6" },
 ] as const;
