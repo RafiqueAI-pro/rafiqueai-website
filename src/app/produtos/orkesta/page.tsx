@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { RingMark } from "@/components/site/RingMark";
@@ -111,9 +112,10 @@ export default function OrkestaPage() {
         </section>
 
         <section className="grid gap-6 py-9 pb-20 md:grid-cols-2">
-          <div
+          <Link
             id="crm"
-            className="scroll-mt-24 rounded-xl border border-slate-800 bg-gradient-to-b from-[#171B33] to-[#131822] p-10 opacity-90"
+            href="/produtos/crm"
+            className="scroll-mt-24 rounded-xl border border-slate-800 bg-gradient-to-b from-[#171B33] to-[#131822] p-10 transition-colors hover:border-crm-500"
           >
             <div className="mb-3.5 inline-flex items-center gap-1.5 rounded-[4px] border border-[#4A3B14] bg-[#241D0C] px-[9px] py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-[#D6A93A]">
               <span className="inline-block h-[5px] w-[5px] rounded-full bg-[#D6A93A]" />
@@ -129,14 +131,15 @@ export default function OrkestaPage() {
               Substitui o CRM de mercado sem abrir mão de automação e IA no
               funil.
             </p>
-            <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-500">
+            <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-crm-400">
               Conhecer o CRM →
             </span>
-          </div>
+          </Link>
 
-          <div
+          <Link
             id="contentos"
-            className="scroll-mt-24 rounded-xl border border-slate-800 bg-gradient-to-b from-[#2A1522] to-[#131822] p-10 opacity-90"
+            href="/produtos/contentos"
+            className="scroll-mt-24 rounded-xl border border-slate-800 bg-gradient-to-b from-[#2A1522] to-[#131822] p-10 transition-colors hover:border-contentos-500"
           >
             <div className="mb-3.5 inline-flex items-center gap-1.5 rounded-[4px] border border-[#4A3B14] bg-[#241D0C] px-[9px] py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-[#D6A93A]">
               <span className="inline-block h-[5px] w-[5px] rounded-full bg-[#D6A93A]" />
@@ -152,10 +155,10 @@ export default function OrkestaPage() {
               Do briefing à publicação, com agentes que executam o trabalho
               repetitivo.
             </p>
-            <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-500">
+            <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-contentos-400">
               Conhecer o ContentOS →
             </span>
-          </div>
+          </Link>
         </section>
       </main>
       <PageFooter />
