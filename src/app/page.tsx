@@ -78,7 +78,7 @@ const PRODUCTS = [
     dot: "bg-crm-400",
     mono: "text-crm-400",
     description: "Funil, mídias sociais, agentes e BI em um só lugar.",
-    href: "/produtos/orkesta#crm",
+    href: "/produtos/crm",
   },
   {
     key: "contentos",
@@ -86,8 +86,17 @@ const PRODUCTS = [
     dot: "bg-contentos-400",
     mono: "text-contentos-400",
     description: "Produção e distribuição de conteúdo assistida por IA.",
-    href: "/produtos/orkesta#contentos",
+    href: "/produtos/contentos",
   },
+] as const;
+
+const CLIENTS = [
+  { name: "Cadia.fit", logo: "/logos/cadia.png", desc: "Coach de dieta e treino por IA, no Telegram", own: false },
+  { name: "Ascenda", logo: "/logos/ascenda.png", desc: "App mobile — aluno e profissional", own: false },
+  { name: "Harumi Doi Arquitetura", logo: null, desc: "Site institucional, gerido no ContentOS", own: false },
+  { name: "GCDR Advogados", logo: null, desc: "Automação de processos e atendimento", own: false },
+  { name: "Orkesta Pulse", logo: "/logos/orkesta.png", desc: "Nosso próprio controle de automações", own: true },
+  { name: "Orkesta CRM", logo: "/logos/orkesta.png", desc: "Nosso próprio funil comercial", own: true },
 ] as const;
 
 const HOME_FAQ = [
@@ -310,6 +319,52 @@ export default function HomePage() {
           >
             Ver a suíte completa →
           </Link>
+        </section>
+
+        <section className="border-t border-white/[0.06] py-16 md:py-20">
+          <div className="mx-auto max-w-site px-6 md:px-10 lg:px-14">
+            <Eyebrow>Quem já roda com a gente</Eyebrow>
+            <h2 className="max-w-[26ch] text-balance text-[clamp(22px,2.8vw,28px)] font-semibold leading-[1.25] tracking-[-0.02em] text-cream">
+              Inclusive nós mesmos.
+            </h2>
+            <p className="mt-4 max-w-[60ch] text-[14.5px] leading-relaxed text-slate-400">
+              O Pulse e o CRM não são só produtos que vendemos — são o que a
+              Rafique AI usa todo dia pra rodar a própria operação.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {CLIENTS.map((c) => (
+                <div
+                  key={c.name}
+                  className={`flex items-center gap-3.5 rounded-lg border p-4 ${
+                    c.own
+                      ? "border-pulse-500/40 bg-pulse-400/[0.06]"
+                      : "border-slate-800 bg-[#131822]"
+                  }`}
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md border border-slate-700 bg-white">
+                    {c.logo ? (
+                      <Image src={c.logo} alt={c.name} width={40} height={40} unoptimized className="object-contain p-1.5" />
+                    ) : (
+                      <span className="font-mono text-[13px] font-semibold text-slate-900">
+                        {c.name.slice(0, 1)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="truncate text-[13.5px] font-semibold text-cream">{c.name}</span>
+                      {c.own ? (
+                        <span className="shrink-0 rounded-[4px] border border-pulse-500/40 bg-pulse-400/10 px-[6px] py-[1px] font-mono text-[9px] font-semibold uppercase tracking-[0.04em] text-pulse-400">
+                          Usamos
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-0.5 truncate text-[12px] text-slate-400">{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="border-t border-white/[0.06] py-16 md:py-20">
