@@ -48,12 +48,12 @@ export default function OrkestaPage() {
                 cegas. O Pulse entrega execução com evidência: build,
                 orquestração e observabilidade no mesmo produto.
               </p>
-              <a
-                href="/contato"
+              <Link
+                href="/produtos/pulse"
                 className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-pulse-400 hover:text-pulse-400/80"
               >
                 Conhecer o Pulse →
-              </a>
+              </Link>
             </div>
 
             <div className="flex gap-3 overflow-x-auto">

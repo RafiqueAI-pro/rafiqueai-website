@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { HeroBackdrop } from "@/components/site/HeroBackdrop";
 import { PageFooter } from "@/components/site/PageFooter";
 import { Faq } from "@/components/site/Faq";
+import { ScreenshotGallery } from "@/components/site/ScreenshotGallery";
 import { ButtonPrimary, ButtonOutline, Eyebrow, MonoLabel } from "@/components/site/ui";
 
 const TITLE = "Orkesta CRM — Rafique AI";
@@ -178,30 +178,7 @@ export default function CrmPage() {
           <h2 className="max-w-[26ch] text-balance text-[clamp(22px,2.8vw,28px)] font-semibold leading-[1.3] tracking-[-0.015em] text-cream">
             O produto rodando, não um mockup.
           </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SCREENSHOTS.map((s) => (
-              <div
-                key={s.label}
-                className="overflow-hidden rounded-lg border border-slate-800 bg-[#11161F]"
-              >
-                <div className="relative aspect-[16/10] w-full border-b border-slate-800">
-                  <Image
-                    src={s.src}
-                    alt={`Orkesta CRM — ${s.label}`}
-                    fill
-                    unoptimized
-                    className="object-cover object-top"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="text-[13px] font-semibold text-cream">{s.label}</div>
-                  <p className="mt-1 text-[12px] leading-relaxed text-slate-400">
-                    {s.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ScreenshotGallery items={SCREENSHOTS} accent="crm" altPrefix="Orkesta CRM" />
         </section>
 
         <section className="border-t border-white/[0.06] py-14">
