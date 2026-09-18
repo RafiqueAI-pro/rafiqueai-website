@@ -91,7 +91,6 @@ const PRODUCTS = [
 ] as const;
 
 const CLIENTS = [
-  { name: "Cadia.fit", logo: "/logos/cadia.png", desc: "Coach de dieta e treino por IA, no Telegram", own: false },
   { name: "Ascenda", logo: "/logos/ascenda.png", desc: "App mobile — aluno e profissional", own: false },
   { name: "Harumi Doi Arquitetura", logo: null, desc: "Site institucional, gerido no ContentOS", own: false },
   { name: "GCDR Advogados", logo: null, desc: "Automação de processos e atendimento", own: false },
@@ -103,7 +102,7 @@ const HOME_FAQ = [
   {
     question: "Serve pro meu tipo de negócio?",
     answer:
-      "Trabalhamos com perfis bem diferentes — de uma consultoria fitness (o Cadia, um produto próprio da Orkesta) a e-commerce e serviço local. O diagnóstico inicial existe justamente pra mapear se o seu fluxo tem automação que vale a pena antes de qualquer proposta.",
+      "Trabalhamos com perfis bem diferentes — de escritórios de advocacia e clínicas a e-commerce e serviço local. O diagnóstico inicial existe justamente pra mapear se o seu fluxo tem automação que vale a pena antes de qualquer proposta.",
   },
   {
     question: "E se eu já uso n8n, Make ou Zapier?",
@@ -113,7 +112,7 @@ const HOME_FAQ = [
   {
     question: "Quanto tempo até funcionar de verdade?",
     answer:
-      "Usamos o Cadia como referência de prazo real: é um produto nosso, em produção, com 100 usuários ativos e 8 assinantes pagantes — não uma promessa abstrata de automação.",
+      "Não existe prazo padrão — depende do fluxo. O diagnóstico mapeia o fluxo real em poucos dias, e a primeira automação roda em sandbox contra dado real antes de qualquer coisa tocar produção. Não é promessa abstrata, é processo testado antes de valer pra você.",
   },
   {
     question: "RPA ou agente de IA — quem decide isso?",
