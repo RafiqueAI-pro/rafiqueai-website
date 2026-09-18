@@ -6,7 +6,7 @@ import { ButtonOutline, Eyebrow, MonoLabel } from "@/components/site/ui";
 export const metadata: Metadata = {
   title: "Produtos anteriores — Rafique AI",
   description:
-    "Ascenda, Ascenda Pro e Cadia — produtos anteriores à suíte Orkesta, mantidos para clientes com contrato vigente.",
+    "Ascenda e Ascenda Pro — produtos anteriores à suíte Orkesta, mantidos para clientes com contrato vigente.",
 };
 
 const LEGACY_PRODUCTS = [
@@ -22,12 +22,6 @@ const LEGACY_PRODUCTS = [
     desc: "Camada avançada do Ascenda — multi-unidade e relatórios financeiros.",
     status: "Mantido",
   },
-  {
-    name: "Cadia",
-    dot: "#F96842",
-    desc: "Automação comercial para academias — matrícula, cobrança e retenção.",
-    status: "Arquivado",
-  },
 ] as const;
 
 export default function LegadoPage() {
@@ -40,7 +34,7 @@ export default function LegadoPage() {
             Produtos que construímos antes da Orkesta.
           </h1>
           <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed text-slate-400">
-            Ascenda, Ascenda Pro e Cadia seguem ativos para clientes com
+            Ascenda e Ascenda Pro seguem ativos para clientes com
             contrato vigente. Não fazem parte da suíte Orkesta e não recebem
             novo desenvolvimento de marca.
           </p>
