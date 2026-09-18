@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const PRODUCTS = [
-  { href: "/produtos/orkesta#pulse", label: "Pulse" },
-  { href: "/produtos/orkesta#crm", label: "CRM" },
-  { href: "/produtos/orkesta#contentos", label: "ContentOS" },
+  { href: "/produtos/pulse", label: "Pulse" },
+  { href: "/produtos/crm", label: "CRM" },
+  { href: "/produtos/contentos", label: "ContentOS" },
 ];
 
 const COMPANY = [
