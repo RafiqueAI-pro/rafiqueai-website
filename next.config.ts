@@ -8,6 +8,18 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  async rewrites() {
+    return [
+      // Blog posts are authored and rendered by ContentOS (site-render, tenant
+      // "rafique"), already live at links.rafiqueai.com.br/<slug>. This proxies
+      // them under rafiqueai.com.br/blog/<slug> so the URL stays on the main
+      // domain without duplicating the rendering pipeline here.
+      {
+        source: "/blog/:slug",
+        destination: "https://links.rafiqueai.com.br/:slug",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
