@@ -138,7 +138,7 @@ export default function HomePage() {
             fluxo real.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonPrimary href="/produtos/orkesta">
+            <ButtonPrimary href="/produtos/pulse">
               Conhecer o Pulse
             </ButtonPrimary>
             <ButtonOutline href="#produtos">Ver a suíte</ButtonOutline>
