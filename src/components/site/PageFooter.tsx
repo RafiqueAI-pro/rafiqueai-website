@@ -9,7 +9,7 @@ const PRODUCTS = [
 const COMPANY = [
   { href: "/quem-somos", label: "Sobre" },
   { href: "/estudio", label: "Estúdio" },
-  { href: "https://orkesta.rafiqueai.com.br/blog", label: "Blog" },
+  { href: "https://links.rafiqueai.com.br/blog", label: "Blog" },
   { href: "/contato", label: "Contato" },
 ];
 
