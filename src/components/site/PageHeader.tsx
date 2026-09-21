@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { href: "/estudio", label: "Estúdio", key: "estudio" },
   { href: "/quem-somos", label: "Sobre", key: "sobre" },
+  { href: "https://orkesta.rafiqueai.com.br/blog", label: "Blog", key: "blog" },
   { href: "/contato", label: "Contato", key: "contato" },
 ] as const;
 
