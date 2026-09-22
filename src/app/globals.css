@@ -37,3 +37,26 @@ a {
 .skip-to-content:focus-visible {
   top: 0;
 }
+
+@keyframes rafique-wave {
+  from {
+    transform: scaleY(0.45);
+  }
+  to {
+    transform: scaleY(1.12);
+  }
+}
+
+.rafique-wave-bar {
+  animation-name: rafique-wave;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rafique-wave-bar {
+    animation: none;
+  }
+}
