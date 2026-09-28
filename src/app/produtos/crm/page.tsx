@@ -8,7 +8,7 @@ import { ButtonPrimary, ButtonOutline, Eyebrow, MonoLabel } from "@/components/s
 const TITLE = "Orkesta CRM — Rafique AI";
 const DESCRIPTION =
   "Funil, contatos e inteligência comercial num só lugar, com WhatsApp integrado e IA priorizando os negócios quentes — a mesma base de dados que já alimenta o Pulse e o ContentOS.";
-const URL = "https://rafiqueai.com.br/produtos/crm";
+const URL = "https://www.rafiqueai.com.br/produtos/crm";
 
 export const metadata: Metadata = {
   title: TITLE,

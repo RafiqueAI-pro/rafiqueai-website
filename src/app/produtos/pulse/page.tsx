@@ -8,7 +8,7 @@ import { ButtonPrimary, ButtonOutline, Eyebrow, MonoLabel } from "@/components/s
 const TITLE = "Orkesta Pulse — Rafique AI";
 const DESCRIPTION =
   "Automação com evidência: build, orquestração e observabilidade no mesmo produto. Toda execução auditável passo a passo, com reprocesso de falhas sem depender de log bruto.";
-const URL = "https://rafiqueai.com.br/produtos/pulse";
+const URL = "https://www.rafiqueai.com.br/produtos/pulse";
 
 export const metadata: Metadata = {
   title: TITLE,

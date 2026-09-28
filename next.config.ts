@@ -9,15 +9,15 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   async rewrites() {
+    // The blog is authored and rendered by ContentOS (site-render, tenant
+    // "rafique" on links.rafiqueai.com.br) and served here under /blog so
+    // it ranks on the main domain. site-render emits canonical URLs, links
+    // and sitemaps for www.rafiqueai.com.br/blog; its static assets live
+    // under /_sr so they don't collide with this app's own /_next.
     return [
-      // Blog posts are authored and rendered by ContentOS (site-render, tenant
-      // "rafique"), already live at links.rafiqueai.com.br/<slug>. This proxies
-      // them under rafiqueai.com.br/blog/<slug> so the URL stays on the main
-      // domain without duplicating the rendering pipeline here.
-      {
-        source: "/blog/:slug",
-        destination: "https://links.rafiqueai.com.br/:slug",
-      },
+      { source: "/blog", destination: "https://links.rafiqueai.com.br/blog" },
+      { source: "/blog/:path*", destination: "https://links.rafiqueai.com.br/blog/:path*" },
+      { source: "/_sr/:path*", destination: "https://links.rafiqueai.com.br/_sr/:path*" },
     ];
   },
 };

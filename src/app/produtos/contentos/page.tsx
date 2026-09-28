@@ -8,7 +8,7 @@ import { ButtonPrimary, ButtonOutline, Eyebrow, MonoLabel } from "@/components/s
 const TITLE = "Orkesta ContentOS — Rafique AI";
 const DESCRIPTION =
   "Do briefing à publicação, com agentes de IA fazendo o trabalho repetitivo. Editor de página pixel-exato, Magic Write e funil editorial com aprovação — do jeito que já roda hoje pros nossos clientes.";
-const URL = "https://rafiqueai.com.br/produtos/contentos";
+const URL = "https://www.rafiqueai.com.br/produtos/contentos";
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -6,7 +6,7 @@ import { ButtonPrimary, ButtonOutline, Eyebrow, MonoLabel } from "@/components/s
 const TITLE = "Automação para Escritórios de Advocacia — Rafique AI";
 const DESCRIPTION =
   "Conecte Atlas Jus, iiLex, Oystr e sua operação em um só painel. Automação e dashboards para escritórios de advocacia que já cresceram demais para planilha.";
-const URL = "https://rafiqueai.com.br/solucoes/direito";
+const URL = "https://www.rafiqueai.com.br/solucoes/direito";
 
 export const metadata: Metadata = {
   title: TITLE,
