@@ -1,18 +1,16 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+
+const baseUrl = "https://www.rafiqueai.com.br";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://rafiqueai.com'
-  
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: [
-        '/api/',
-        '/admin/',
-        '/_next/',
-      ],
+      userAgent: "*",
+      allow: "/",
+      // /_next/ stays crawlable: Google needs the JS/CSS to render pages.
+      disallow: ["/api/", "/admin/"],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    // The blog (served from ContentOS under /blog) keeps its own sitemap.
+    sitemap: [`${baseUrl}/sitemap.xml`, `${baseUrl}/blog/sitemap.xml`],
+  };
 }

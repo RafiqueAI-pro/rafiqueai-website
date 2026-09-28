@@ -7,8 +7,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Rafique AI",
-  url: "https://rafiqueai.com.br",
-  logo: "https://rafiqueai.com.br/logos/rafiqueai.png",
+  url: "https://www.rafiqueai.com.br",
+  logo: "https://www.rafiqueai.com.br/logos/rafiqueai.png",
   description:
     "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",
   founders: [
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   title: "Rafique AI — Software que mostra o que está acontecendo",
   description:
     "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta: Pulse, CRM e ContentOS.",
-  metadataBase: new URL("https://rafiqueai.com.br"),
+  metadataBase: new URL("https://www.rafiqueai.com.br"),
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://rafiqueai.com.br",
+    url: "https://www.rafiqueai.com.br",
     title: "Rafique AI — Software que mostra o que está acontecendo",
     description:
       "Estúdio de produtos de automação e dados. Construímos a suíte Orkesta.",

@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://rafiqueai.com.br";
+  // www is canonical — the apex 308s to it.
+  const baseUrl = "https://www.rafiqueai.com.br";
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
+    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
     {
       url: `${baseUrl}/quem-somos`,
       lastModified: new Date(),
